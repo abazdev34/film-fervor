@@ -1,20 +1,16 @@
-import { IActionTypes } from './types/types'
+/** @format */
 
-interface IState{
-	balance: number
+import { IActionTypes, IState } from "./types/types"
+
+const initialState: IState = {
+	balance: 0,
+	films: [],
 }
 
-const initialState:IState={
-	balance:0
-}
-
-const UserReducer = (state=initialState,action:IActionTypes)=>{
-	
-switch(action.type)
-{  
-	
-	default:
-	return state
-} 
+const UserReducer = (state = initialState, action: IActionTypes) => {
+	switch (action.type) {
+		default:
+			return state
+	}
 }
 export default UserReducer

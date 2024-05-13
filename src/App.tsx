@@ -1,16 +1,20 @@
-import Header from './components/header/Header'
+/** @format */
 
+import { useEffect } from "react"
+import Header from "./components/header/Header"
+import { UseTypedDispatch } from "./Redux/customHooks/UseTypedDispatch"
 
 function App() {
-
-
-  return (
-    <div>
-   
-      <Header/>
-       
-    </div>
-  )
+	const { getFilms } = UseTypedDispatch()
+	useEffect(() => {
+		getFilms("popular")
+	},[])
+	return (
+		<div>
+			<Header />
+			<h1>Hiii</h1>
+		</div>
+	)
 }
 
 export default App
