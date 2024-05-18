@@ -1,16 +1,22 @@
 /** @format */
+import { IUserAction, IUserState } from "./Interfaces/interFaces"
+import { userActionsTypes } from "./actionTypes/actionTypes"
 
-import { IActionTypes, IState } from "./types/types"
-
-const initialState: IState = {
-	balance: 0,
+const initialState: IUserState = {
 	films: [],
 }
 
-const UserReducer = (state = initialState, action: IActionTypes) => {
+const UserReducer = (state = initialState, action: IUserAction): IUserState => {
 	switch (action.type) {
+		case userActionsTypes.GET_FILMS: {
+			return {
+				...state,
+				films: action.payload,
+			}
+		}
 		default:
 			return state
 	}
 }
+
 export default UserReducer

@@ -1,6 +1,6 @@
 /** @format */
 
-import { ActionTypes } from "./ActionTypes"
+import { userActionsTypes } from "../actionTypes/actionTypes"
 
 export interface IFilms {
 	adult: boolean
@@ -18,12 +18,13 @@ export interface IFilms {
 	vote_average: number
 	vote_count: number
 }
-export interface IState {
-	balance: number
+export interface IUserState {
 	films: IFilms[]
 }
-export interface IGetProducts {
-	type: typeof ActionTypes.GET_FILMS
+
+export interface IGetFilms {
+	type: userActionsTypes.GET_FILMS
+	payload: IFilms[]
 }
 
-export type IActionTypes = IGetProducts
+export type IUserAction = IGetFilms
