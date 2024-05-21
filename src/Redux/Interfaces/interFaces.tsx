@@ -20,6 +20,7 @@ export interface IFilms {
 }
 export interface IUserState {
 	films: IFilms[]
+	isRegistered: boolean
 }
 
 export interface IGetFilms {

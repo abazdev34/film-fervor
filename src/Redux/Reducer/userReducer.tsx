@@ -1,16 +1,18 @@
 /** @format */
 
-import { IDogsAction, IUserState } from "../Interfaces/interFaces"
+import { IUserAction, IUserState } from "../Interfaces/interFaces"
 import { userActionsTypes } from "../actionTypes/actionTypes"
 
 const initialState: IUserState = {
 	films: [],
+	isRegistered: false,
+	
 }
 
 // reducer
 export const userReducer = (
 	state = initialState,
-	action: IDogsAction
+	action: IUserAction
 ): IUserState => {
 	switch (action.type) {
 		case userActionsTypes.GET_FILMS: {
